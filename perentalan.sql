@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.6
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 16, 2017 at 03:16 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Host: localhost:3306
+-- Generation Time: Nov 21, 2017 at 05:00 AM
+-- Server version: 10.1.20-MariaDB
+-- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,10 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `perentalan`
+-- Database: `id3656787_perentalan`
 --
-CREATE DATABASE IF NOT EXISTS `perentalan` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `perentalan`;
 
 -- --------------------------------------------------------
 
@@ -42,7 +40,8 @@ INSERT INTO `barang` (`id_barang`, `jenis_barang`, `nama_barang`) VALUES
 (512353, 'Komik', 'One Puch Man'),
 (512354, 'DVD', 'Doraemon'),
 (512355, 'DVD', 'Hang Out'),
-(512356, 'DVD', 'One Puch Man');
+(512356, 'DVD', 'One Puch Man'),
+(512357, 'DVD', 'Jackie Chan');
 
 -- --------------------------------------------------------
 
@@ -65,9 +64,12 @@ CREATE TABLE `peminjam` (
 --
 
 INSERT INTO `peminjam` (`id_peminjam`, `nama_peminjam`, `jenis_kelamin`, `status_peminjam`, `alamat_peminjam`, `username_peminjam`, `password_peminjam`) VALUES
-(51223, 'Kurima', 'Laki-laki', 'Aktif', 'Jln.Durian', 'kuri', ''),
-(51224, 'Dukir', 'Laki-laki', 'Aktif', 'Jln.Mangga', 'duk', ''),
-(51227, 'Bokir Dusin', 'Laki-laki', 'Aktif', 'Jln.Manggis', 'bokir', '');
+(51223, 'Kurima', 'Laki-laki', 'Aktif', 'Jln.Durian', 'kuri', 'kuri'),
+(51224, 'Dukir', 'Laki-laki', 'Aktif', 'Jln.Mangga', 'duk', 'duk'),
+(51227, 'Bokir Dusin', 'Laki-laki', 'Aktif', 'Jln.Manggis', 'bokir', 'bukir3456'),
+(51228, 'Bayu', 'Laki-laki', 'Aktif', 'Jln.Nangka', 'bayu', 'bayuskak098'),
+(51229, 'Nanang', 'Laki-laki', 'Aktif', 'Jln.MekarSari', 'nanang', 'nunung'),
+(51230, 'Sakura', 'Perempuan', 'Aktif', 'Jln.TegalSari', 'sakura', 'sakura');
 
 -- --------------------------------------------------------
 
@@ -88,8 +90,9 @@ CREATE TABLE `pengurus` (
 --
 
 INSERT INTO `pengurus` (`id_pengurus`, `nama_pengurus`, `alamat_pengurus`, `username`, `password`) VALUES
-(612516, 'Judir', 'Jln.Suramadu', 'judri112', 'd41d8cd98f00b204e9800998ecf8427e'),
-(612517, 'Ciko', 'Jln.Sakinah', 'ciko01', 'pantek');
+(612517, 'Ciko', 'Jln.Sakinah', 'ciko01', 'ciko01'),
+(612519, 'abdul', 'Jln.Sakinah', 'abdul', 'abdul'),
+(612520, 'bagas', 'Jln.Rambutan', 'bagas', 'bagas01');
 
 -- --------------------------------------------------------
 
@@ -112,9 +115,10 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_barang`, `id_peminjam`, `id_pengurus`, `tgl_peminjaman`, `tgl_pengembalian`, `status_transaksi`) VALUES
-(536664, 512353, 51223, 612516, '2017-11-14', '2017-11-16', 'Peminjaman'),
-(536665, 512355, 51227, 612517, '2017-11-15', '2017-11-16', 'Dikembalikan'),
-(536666, 512354, 51223, 612516, '2017-11-15', '2017-11-17', 'Dikembalikan');
+(536667, 512353, 51223, 612517, '2017-11-19', '2017-11-21', 'Peminjaman'),
+(536668, 512354, 51223, 612519, '2017-11-19', '2017-11-22', 'Dikembalikan'),
+(536669, 512353, 51224, 612517, '2017-11-12', '2017-11-18', 'Dikembalikan'),
+(536670, 512355, 51224, 612517, '2017-11-24', '2017-11-18', 'Peminjaman');
 
 --
 -- Indexes for dumped tables
@@ -159,22 +163,22 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=512357;
+  MODIFY `id_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=512358;
 --
 -- AUTO_INCREMENT for table `peminjam`
 --
 ALTER TABLE `peminjam`
-  MODIFY `id_peminjam` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51228;
+  MODIFY `id_peminjam` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51231;
 --
 -- AUTO_INCREMENT for table `pengurus`
 --
 ALTER TABLE `pengurus`
-  MODIFY `id_pengurus` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=612518;
+  MODIFY `id_pengurus` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=612521;
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=536667;
+  MODIFY `id_transaksi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=536671;
 --
 -- Constraints for dumped tables
 --
